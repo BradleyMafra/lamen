@@ -1,6 +1,6 @@
 Instruções para rodar a API:
 
-1. Instalação do Python:
+1. Instalação do Python usando Linux:
    Certifique-se de ter o Python instalado em sua máquina. Você pode instalá-lo executando o seguinte comando:
    ```bash
    sudo apt install python3 python3-venv
