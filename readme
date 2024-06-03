@@ -1,0 +1,116 @@
+Instruções para rodar a API:
+
+1. Instalação do Python:
+   Certifique-se de ter o Python instalado em sua máquina. Você pode instalá-lo executando o seguinte comando:
+   ```bash
+   sudo apt install python3 python3-venv
+   ```
+
+
+2. Configuração do Ambiente Virtual:
+Crie um ambiente virtual para isolar as dependências do projeto. Execute o seguinte comando:
+   ```bash
+   python3 -m venv venv
+   ```
+
+Em seguida, ative o ambiente virtual:
+   ```bash
+   source venv/bin/activate
+   ```
+
+
+3. Instalação de Dependências:
+Instale as bibliotecas necessárias executando os seguintes comandos:
+   ```bash
+   pip install Flask requests
+   ```
+   ```bash
+   pip install pyngrok (opcional)
+   ```
+   ```bash
+   pip install flask-cors
+   ```
+
+
+4. Execução da API:
+Para iniciar a API, execute o seguinte comando:
+   ```bash
+   flask run
+   ```
+
+
+5. Acesso Externo (Opcional):
+Se desejar permitir acesso externo à sua API, você pode usar o ngrok. Em um terminal separado, execute o seguinte comando:
+   ```bash
+   ngrok http 5000
+   ```
+
+Isso fornecerá um URL temporário que pode ser usado para acessar sua API externamente.
+
+Nota: Certifique-se de que todas as portas e permissões necessárias estejam configuradas corretamente para permitir o acesso à sua API.
+
+
+# Testes feitos via Postman
+
+1. **GET /proteins**
+   - Retorna as proteinas 
+   - Resposta esperada: 
+   ```bash
+   {
+        "description": "A sliced flavourful pork meat with a selection of season vegetables.",
+        "id": "1",
+        "imageActive": "https://tech.redventures.com.br/icons/pork/active.svg",
+        "imageInactive": "https://tech.redventures.com.br/icons/pork/inactive.svg",
+        "name": "Chasu",
+        "price": 10
+    }
+    ```
+2. **GET /broths**
+   - Retorna os broths
+   - Resposta esperada: 
+   ```bash
+    {
+        "description": "Simple like the seawater, nothing more",
+        "id": "1",
+        "imageActive": "https://tech.redventures.com.br/icons/salt/active.svg",
+        "imageInactive": "https://tech.redventures.com.br/icons/salt/inactive.svg",
+        "name": "Salt",
+        "price": 10
+    }
+    ```
+3. **POST /orders**
+   - Cria um novo pedido
+   - Corpo da requisição:
+   ```bash
+      {
+      "brothId": "1",
+      "proteinId": "1"
+      }
+    ```
+
+   - Resposta esperada:
+   ```bash
+      {
+         "description": "Salt and Chasu Ramen",
+         "id": "87159",
+         "image": "https://tech.redventures.com.br/icons/ramen/ramenChasu.png"
+      }
+   ```
+
+-------------------------------
+
+# Testes feitos pelo [navegador](https://tech.redventures.com.br/)
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+## Resultado obtidos via inspecionar:
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
